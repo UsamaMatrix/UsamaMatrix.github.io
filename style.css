@@ -764,3 +764,137 @@ p {
   color: white;
   font-size: 1.3rem;
 }
+
+/* Tools & Frameworks Horizontal Slider */
+#tools {
+  padding: 80px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+#tools h1.section-title {
+  margin-bottom: 30px;
+}
+.tool-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 30px;
+  padding: 10px;
+}
+.tool-slider::-webkit-scrollbar {
+  height: 8px;
+}
+.tool-slider::-webkit-scrollbar-thumb {
+  background-color: crimson;
+  border-radius: 10px;
+}
+.tool-slider img {
+  max-height: 80px;
+  max-width: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.tool-slider img:hover {
+  transform: scale(1.1);
+}
+
+/* Certifications & Badges */
+#certifications {
+  padding: 60px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+.cert-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+}
+.cert-grid img {
+  width: 100px;
+  height: auto;
+  filter: grayscale(1);
+  transition: 0.3s ease filter;
+}
+.cert-grid img:hover {
+  filter: grayscale(0);
+}
+
+/* Blog Preview Section */
+#blog {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.blog-entry {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+.blog-entry h2 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+.blog-entry p {
+  font-size: 1.5rem;
+  color: #333;
+}
+.blog-entry a {
+  display: inline-block;
+  margin-top: 15px;
+  color: crimson;
+  font-weight: bold;
+  font-size: 1.6rem;
+  text-decoration: underline;
+}
+
+/* AI Security Solutions */
+#ai-security {
+  padding: 80px 20px;
+  background-color: #eeeeee;
+  text-align: center;
+}
+#ai-security h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+#ai-security p {
+  max-width: 900px;
+  margin: auto;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+}
+
+/* Call to Action */
+#cta-bar {
+  background-color: #29323c;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+#cta-bar h2 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+#cta-bar a {
+  display: inline-block;
+  background: crimson;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+#cta-bar a:hover {
+  background: #e60023;
+}
+
+/* Responsive Tools Section */
+@media only screen and (max-width: 768px) {
+  .tool-slider {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+}

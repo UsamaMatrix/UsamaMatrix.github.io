@@ -11,15 +11,21 @@ body {
 
 #bg-overlay {
   position: fixed;
-  top: 0; left: 0;
-  width: 200vw; height: 200vh;
-  background-image: url('./assets/images/hacker_bg_grid.png');
+  top: 0;
+  left: 0;
+  width: 200vw;
+  height: 200vh;
+  background-image: url('./assets/images/bg-matrix.png');
   background-size: cover;
-  opacity: 0.05;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.07;
   z-index: -1;
   transform: translate(-25%, -25%);
   transition: transform 0.05s ease;
+  filter: contrast(130%) brightness(130%) blur(0.5px);
 }
+
 
 header {
   background: rgba(0, 0, 0, 0.85);

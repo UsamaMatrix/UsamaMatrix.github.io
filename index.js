@@ -1,20 +1,18 @@
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('light');
-  themeToggle.textContent = body.classList.contains('light') ? '🌙' : '☀️';
+// Dark / Light Theme
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  const icon = document.getElementById('theme-toggle');
+  icon.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
 });
 
-// Mouse move background
-const bg = document.getElementById('bg-overlay');
+// Mouse-based background movement
 document.addEventListener('mousemove', (e) => {
-  const x = (e.clientX / window.innerWidth) * 50;
-  const y = (e.clientY / window.innerHeight) * 50;
-  bg.style.transform = `translate(-${x}%, -${y}%)`;
+  const x = (e.clientX / window.innerWidth) * 100;
+  const y = (e.clientY / window.innerHeight) * 100;
+  document.getElementById('bg-overlay').style.transform = `translate(-${x}%, -${y}%)`;
 });
 
-// Contact form
+// Contact form validation
 const form = document.getElementById('contact-form');
 const msg = document.getElementById('form-message');
 

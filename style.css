@@ -1,11 +1,11 @@
 body {
   font-family: 'Fira Code', monospace;
+  background-color: #0c0c0c;
+  color: #00ff00;
   margin: 0;
   padding: 0;
-  background-color: #000;
-  color: #00ff00;
   overflow-x: hidden;
-  transition: 0.3s;
+  transition: 0.3s ease;
   position: relative;
 }
 
@@ -14,24 +14,28 @@ body {
   top: 0; left: 0;
   width: 200vw; height: 200vh;
   background-image: url('./assets/images/hacker_bg_grid.png');
-  opacity: 0.1;
+  background-size: cover;
+  opacity: 0.05;
   z-index: -1;
   transform: translate(-25%, -25%);
   transition: transform 0.05s ease;
 }
 
 header {
+  background: rgba(0, 0, 0, 0.85);
   position: fixed;
   width: 100%;
-  padding: 20px;
-  background: rgba(0,0,0,0.85);
   z-index: 1000;
+  padding: 20px 10px;
+  border-bottom: 1px solid #00ff00;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .nav-list {
@@ -44,78 +48,100 @@ nav {
 }
 
 .nav-list a {
-  text-decoration: none;
   color: #00ff00;
+  text-decoration: none;
   transition: 0.3s;
 }
 
 .nav-list a:hover {
-  text-shadow: 0 0 5px #0f0;
+  color: #00ffdd;
+  text-shadow: 0 0 10px #00ffcc;
 }
 
 #theme-toggle {
   background: none;
-  color: #00ff00;
   border: none;
-  font-size: 20px;
+  color: #00ff00;
+  font-size: 18px;
   cursor: pointer;
+}
+
+main {
+  padding-top: 100px;
 }
 
 .hero-content {
   text-align: center;
-  padding: 200px 20px 100px;
+  padding: 120px 20px 100px;
+}
+
+.hero-img {
+  width: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #00ff99;
+  box-shadow: 0 0 15px #00ff99;
 }
 
 .hero-content h1 span {
-  color: #0f0;
-  text-shadow: 0 0 10px #0f0;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffaa;
 }
 
 .cta {
   display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
+  background: #00ff99;
   color: #000;
-  background: #0f0;
-  border: none;
-  text-decoration: none;
   font-weight: bold;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
-#services {
-  padding: 80px 20px 50px;
+#services, #tools, #contact {
+  padding: 80px 20px;
   text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #00ffaa;
+  text-shadow: 0 0 8px #00ffaa;
 }
 
 .service-container {
   display: grid;
-  gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .service-item {
   padding: 20px;
   border: 1px solid #0f0;
-  background: rgba(0,0,0,0.7);
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  background: #111;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px #00ff66;
 }
 
 .service-item:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 10px #0f0;
+  box-shadow: 0 0 20px #00ff99;
 }
 
 .tool-slider {
   overflow: hidden;
-  white-space: nowrap;
   padding: 20px;
-  text-align: center;
 }
 
 .tool-icons {
+  white-space: nowrap;
   display: inline-block;
-  animation: scroll 30s linear infinite;
+  animation: scroll 25s linear infinite;
 }
 
 .tool-icons img {
@@ -133,28 +159,24 @@ nav {
   to { transform: translateX(-100%); }
 }
 
-#contact {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-#contact-form {
-  max-width: 500px;
-  margin: auto;
+form#contact-form {
   display: flex;
   flex-direction: column;
+  max-width: 500px;
+  margin: auto;
 }
 
-#contact-form input, #contact-form textarea {
-  padding: 10px;
+input, textarea {
   margin: 10px 0;
-  background: #111;
-  border: 1px solid #0f0;
-  color: #0f0;
+  padding: 10px;
+  background: #1a1a1a;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  border-radius: 4px;
 }
 
-#contact-form button {
-  background: #0f0;
+button {
+  background: #00ff00;
   color: #000;
   padding: 10px;
   border: none;
@@ -162,16 +184,19 @@ nav {
 }
 
 footer {
-  padding: 20px;
   text-align: center;
+  padding: 20px;
   background: #000;
-}
-
-.social-icons {
-  margin-top: 10px;
+  border-top: 1px solid #00ff00;
 }
 
 .social-icons img {
-  width: 24px;
-  margin: 0 10px;
+  width: 25px;
+  margin: 0 8px;
+  filter: brightness(0.8);
+}
+
+.neon-border {
+  border: 2px solid #00ff99;
+  box-shadow: 0 0 10px #00ffaa;
 }

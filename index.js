@@ -1,25 +1,28 @@
-const hamburger = document.querySelector(".hamburger");
-const mobileMenu = document.querySelector(".nav-list ul");
-const menuItems = document.querySelectorAll(".nav-list ul li a");
-const header = document.querySelector(".header.container");
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  mobileMenu.classList.toggle("active");
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light');
+    themeToggle.textContent = body.classList.contains('light') ? '🌙' : '☀️';
 });
 
-menuItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    mobileMenu.classList.remove("active");
-  });
-});
+// Contact Form Validation
+const contactForm = document.getElementById('contact-form');
+const formMessage = document.getElementById('form-message');
 
-window.addEventListener("scroll", () => {
-  const scrollPosition = window.scrollY;
-  if (scrollPosition > 250) {
-    header.style.backgroundColor = "#29323c";
-  } else {
-    header.style.backgroundColor = "transparent";
-  }
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if (name && email && message) {
+        formMessage.textContent = 'Message sent successfully!';
+        formMessage.style.color = 'green';
+        contactForm.reset();
+    } else {
+        formMessage.textContent = 'Please fill in all fields.';
+        formMessage.style.color = 'red';
+    }
 });

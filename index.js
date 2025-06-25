@@ -16,7 +16,8 @@ document.addEventListener('mousemove', (e) => {
 const form = document.getElementById('contact-form');
 const msg = document.getElementById('form-message');
 
-emailjs.init("YOUR_PUBLIC_KEY_HERE"); // <- Replace this with your actual EmailJS public key
+// ✅ Initialize EmailJS with your Public Key
+emailjs.init("iNAnmokH7bbLaGij5");  // ← Your actual EmailJS Public Key
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -25,7 +26,7 @@ form.addEventListener('submit', function (e) {
   const message = document.getElementById('message').value.trim();
 
   if (!name || !email || !message) {
-    msg.textContent = "Please fill in all fields.";
+    msg.textContent = "⚠️ Please fill in all fields.";
     msg.style.color = "red";
     return;
   }
@@ -36,14 +37,14 @@ form.addEventListener('submit', function (e) {
     message: message
   };
 
-  // Send email using EmailJS
-  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
-    .then(function(response) {
+  // 🚀 Send email using EmailJS
+  emailjs.send("service_kbi84ho", "template_ak7tlim", templateParams)
+    .then(function (response) {
       msg.textContent = "✅ Message sent successfully!";
       msg.style.color = "lime";
       form.reset();
-    }, function(error) {
-      console.error('FAILED...', error);
+    }, function (error) {
+      console.error("FAILED TO SEND EMAIL:", error);
       msg.textContent = "❌ Failed to send. Please try again.";
       msg.style.color = "orange";
     });

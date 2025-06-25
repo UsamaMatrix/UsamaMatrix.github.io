@@ -141,11 +141,11 @@ h2 {
   padding: 20px;
   white-space: nowrap;
   scroll-behavior: smooth;
-  -ms-overflow-style: none;     /* IE and Edge */
-  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* Hide scrollbar in IE and Edge */
+  scrollbar-width: none;        /* Hide scrollbar in Firefox */
 }
 .tool-slider::-webkit-scrollbar {
-  display: none;                /* Chrome, Safari */
+  display: none;                /* Hide scrollbar in Chrome/Safari */
 }
 
 .tool-icons {
@@ -154,6 +154,7 @@ h2 {
   animation: scroll 25s linear infinite;
   gap: 20px;
 }
+
 .tool-slider:hover .tool-icons {
   animation-play-state: paused;
 }
@@ -179,10 +180,12 @@ h2 {
   filter: brightness(0.9) drop-shadow(0 0 2px #00ffcc);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
+
 .tool-icon-wrap:hover {
   transform: scale(1.15);
   box-shadow: 0 0 20px rgba(0, 255, 128, 0.3);
 }
+
 .tool-icon-wrap img:hover {
   transform: scale(1.3);
   filter: brightness(1.2) drop-shadow(0 0 10px #00ffaa);
@@ -195,11 +198,11 @@ h2 {
   padding: 20px;
   white-space: nowrap;
   scroll-behavior: smooth;
-  -ms-overflow-style: none;     /* IE and Edge */
-  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .os-slider::-webkit-scrollbar {
-  display: none;                /* Chrome, Safari */
+  display: none;
 }
 
 .os-icons {
@@ -208,6 +211,7 @@ h2 {
   animation: scrollos 30s linear infinite;
   gap: 20px;
 }
+
 .os-slider:hover .os-icons {
   animation-play-state: paused;
 }
@@ -225,6 +229,7 @@ h2 {
   transition: transform 0.2s ease;
   box-shadow: 0 0 12px rgba(0, 255, 128, 0.1);
 }
+
 .os-icon-wrap img {
   max-height: 50px;
   max-width: 80px;
@@ -232,10 +237,12 @@ h2 {
   filter: brightness(0.85) drop-shadow(0 0 2px #00ff88);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
+
 .os-icon-wrap:hover {
   transform: scale(1.15);
   box-shadow: 0 0 20px rgba(0, 255, 128, 0.3);
 }
+
 .os-icon-wrap img:hover {
   transform: scale(1.3);
   filter: brightness(1.3) drop-shadow(0 0 10px #00ffaa);
@@ -247,6 +254,7 @@ h2 {
   from { transform: translateX(0); }
   to { transform: translateX(-100%); }
 }
+
 @keyframes scrollos {
   from { transform: translateX(0); }
   to { transform: translateX(-100%); }

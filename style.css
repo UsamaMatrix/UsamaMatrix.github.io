@@ -11,7 +11,6 @@ body {
   position: relative;
 }
 
-/* Glowing Matrix-style Background */
 #bg-overlay {
   position: fixed;
   top: 0;
@@ -29,6 +28,7 @@ body {
   filter: contrast(130%) brightness(130%) blur(0.5px);
 }
 
+/* Header */
 header {
   background: rgba(0, 0, 0, 0.85);
   position: fixed;
@@ -37,7 +37,6 @@ header {
   padding: 20px 10px;
   border-bottom: 1px solid #00ff00;
 }
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -45,27 +44,22 @@ nav {
   max-width: 1200px;
   margin: auto;
 }
-
 .nav-list {
   display: flex;
   list-style: none;
 }
-
 .nav-list li {
   margin: 0 15px;
 }
-
 .nav-list a {
   color: #00ff00;
   text-decoration: none;
   transition: 0.3s;
 }
-
 .nav-list a:hover {
   color: #00ffdd;
   text-shadow: 0 0 10px #00ffcc;
 }
-
 #theme-toggle {
   background: none;
   border: none;
@@ -78,11 +72,11 @@ main {
   padding-top: 100px;
 }
 
+/* Hero Section */
 .hero-content {
   text-align: center;
   padding: 120px 20px 100px;
 }
-
 .hero-img {
   width: 120px;
   border-radius: 50%;
@@ -90,12 +84,10 @@ main {
   border: 3px solid #00ff99;
   box-shadow: 0 0 15px #00ff99;
 }
-
 .hero-content h1 span {
   color: #00ffcc;
   text-shadow: 0 0 10px #00ffaa;
 }
-
 .cta {
   display: inline-block;
   background: #00ff99;
@@ -107,23 +99,21 @@ main {
   margin-top: 20px;
   transition: background 0.3s ease;
 }
-
 .cta:hover {
   background: #00ffaa;
 }
 
+/* Section Styling */
 #services, #tools, #oss, #contact {
   padding: 80px 20px;
   text-align: center;
 }
-
 h2 {
   font-size: 2.5rem;
   margin-bottom: 30px;
   color: #00ffaa;
   text-shadow: 0 0 8px #00ffaa;
 }
-
 .service-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -131,7 +121,6 @@ h2 {
   max-width: 1000px;
   margin: auto;
 }
-
 .service-item {
   padding: 20px;
   border: 1px solid #0f0;
@@ -140,22 +129,16 @@ h2 {
   transition: 0.3s ease;
   box-shadow: 0 0 10px #00ff66;
 }
-
 .service-item:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #00ff99;
 }
 
-/* ======================= */
-/* Tools & OS Sliders     */
-/* ======================= */
-
-/* Tools Slider Container */
+/* Tools Slider */
 .tool-slider {
   overflow: hidden;
   padding: 20px;
 }
-
 .tool-icons {
   white-space: nowrap;
   display: inline-block;
@@ -164,17 +147,18 @@ h2 {
 .tool-slider:hover .tool-icons {
   animation-play-state: paused;
 }
-
 .tool-icons img {
-  height: 50px;
-  margin: 0 15px;
-  transition: transform 0.2s;
+  height: 70px;
+  margin: 0 20px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0.9) drop-shadow(0 0 2px #00ffcc);
 }
 .tool-icons img:hover {
-  transform: scale(1.3);
+  transform: scale(1.4);
+  filter: brightness(1.2) drop-shadow(0 0 8px #00ffaa);
 }
 
-/* OS Slider Container */
+/* OS Slider */
 .os-slider {
   overflow-x: auto;
   padding: 20px;
@@ -187,16 +171,15 @@ h2 {
 .os-slider:hover .os-icons {
   animation-play-state: paused;
 }
-
 .os-icons img {
-  height: 50px;
-  margin: 0 15px;
-  transition: transform 0.2s ease, filter 0.3s ease;
-  filter: brightness(0.8);
+  height: 70px;
+  margin: 0 20px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0.8) drop-shadow(0 0 2px #00ff88);
 }
 .os-icons img:hover {
-  transform: scale(1.3);
-  filter: brightness(1.2);
+  transform: scale(1.4);
+  filter: brightness(1.3) drop-shadow(0 0 8px #00ffaa);
 }
 
 /* Scroll Animations */
@@ -209,14 +192,13 @@ h2 {
   to { transform: translateX(-100%); }
 }
 
-/* Contact */
+/* Contact Form */
 form#contact-form {
   display: flex;
   flex-direction: column;
   max-width: 500px;
   margin: auto;
 }
-
 input, textarea {
   margin: 10px 0;
   padding: 10px;
@@ -225,7 +207,6 @@ input, textarea {
   border: 1px solid #00ff00;
   border-radius: 4px;
 }
-
 button {
   background: #00ff00;
   color: #000;
@@ -234,7 +215,6 @@ button {
   cursor: pointer;
   transition: background 0.2s ease;
 }
-
 button:hover {
   background: #00ffaa;
 }
@@ -246,19 +226,18 @@ footer {
   background: #000;
   border-top: 1px solid #00ff00;
 }
-
 .social-icons img {
-  width: 25px;
-  margin: 0 8px;
-  filter: brightness(0.8);
+  width: 30px;
+  margin: 0 10px;
+  filter: brightness(0.9);
   transition: transform 0.3s;
 }
-
 .social-icons img:hover {
   transform: scale(1.3);
   filter: brightness(1.2);
 }
 
+/* Utility */
 .neon-border {
   border: 2px solid #00ff99;
   box-shadow: 0 0 10px #00ffaa;

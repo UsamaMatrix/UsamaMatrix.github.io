@@ -144,6 +144,34 @@ h2 {
   padding: 20px;
 }
 
+/* New OS carousel styling */
+.os-slider {
+  overflow-x: auto;
+  padding: 20px;
+  white-space: nowrap;
+}
+.os-icons {
+  display: inline-block;
+  animation: scrollos 30s linear infinite;
+}
+.os-icons img {
+  height: 50px;
+  margin: 0 15px;
+  transition: transform 0.2s ease, filter 0.3s ease;
+  filter: brightness(0.8);
+}
+.os-icons img:hover {
+  transform: scale(1.3);
+  filter: brightness(1.2);
+}
+
+/* Speed variation to differentiate from tools */
+@keyframes scrollos {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+
 .tool-icons {
   white-space: nowrap;
   display: inline-block;

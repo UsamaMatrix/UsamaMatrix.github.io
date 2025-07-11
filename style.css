@@ -310,3 +310,43 @@ footer {
   border: 2px solid #00ff99;
   box-shadow: 0 0 10px #00ffaa;
 }
+
+/* ===== Projects Section ===== */
+#projects {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.project-item {
+  padding: 20px;
+  background: #111;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px #00ff66;
+}
+
+.project-item:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 20px #00ffaa;
+}
+
+.project-item a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #00ffaa;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.project-item a:hover {
+  color: #00ffcc;
+}

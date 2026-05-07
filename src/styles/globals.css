@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #080b0f;
+    color: #e2e8f0;
+    font-family: "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0d1117;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #06b6d4;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.15);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+  }
+
+  .grid-bg {
+    background-image: linear-gradient(
+        rgba(6, 182, 212, 0.03) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-red {
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-glow-cyan:hover {
+    border-color: rgba(6, 182, 212, 0.5);
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.1);
+  }
+
+  .border-glow-red:hover {
+    border-color: rgba(239, 68, 68, 0.5);
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.1);
+  }
+
+  .font-mono {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+  }
+}
+
+@layer utilities {
+  .animate-gradient-x {
+    background-size: 300%;
+    animation: gradient-x 8s ease infinite;
+  }
+}
+
+@keyframes gradient-x {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.terminal-scanline {
+  animation: scanline 4s linear infinite;
+  pointer-events: none;
+}

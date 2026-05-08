@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 
 /* ── EmailJS config ─────────────────────────────────────── */
-const EJS_SERVICE  = "service_kbi84ho";
+const EJS_SERVICE  = "service_m8rujlo";
 const EJS_TEMPLATE = "template_ak7tlim";
 const EJS_PUBLIC   = "iNAnmokH7bbLaGij5";
 

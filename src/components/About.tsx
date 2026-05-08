@@ -12,14 +12,15 @@ const cards = [
 ];
 
 const accent = {
-  red:  { icon:"text-red-400",    bg:"bg-red-400/10",    border:"border-red-400/20",    hover:"hover:border-red-400/40"  },
-  cyan: { icon:"text-cyan-400",   bg:"bg-cyan-400/10",   border:"border-cyan-400/20",   hover:"hover:border-cyan-400/40" },
-  blue: { icon:"text-blue-400",   bg:"bg-blue-400/10",   border:"border-blue-400/20",   hover:"hover:border-blue-400/40" },
+  red:  { icon:"text-red-400",  bg:"bg-red-400/10",  border:"border-red-400/20",  hover:"hover:border-red-400/40",  glow:"hover:shadow-red-500/10"  },
+  cyan: { icon:"text-cyan-400", bg:"bg-cyan-400/10", border:"border-cyan-400/20", hover:"hover:border-cyan-400/40", glow:"hover:shadow-cyan-500/10" },
+  blue: { icon:"text-blue-400", bg:"bg-blue-400/10", border:"border-blue-400/20", hover:"hover:border-blue-400/40", glow:"hover:shadow-blue-500/10" },
 };
 
 export default function About() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+
   return (
     <section id="about" className="py-16 sm:py-24 page-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,17 +41,27 @@ export default function About() {
             <span className="text-cyan-400 font-medium">UZYNTRA Security</span>, a cybersecurity and
             secure engineering company focused on helping startups and businesses build secure digital systems.
           </p>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {cards.map((card, i) => {
               const a = accent[card.accentColor];
               const Icon = card.icon;
               return (
-                <motion.div key={card.title}
-                  initial={{ opacity:0, y:20 }} animate={inView?{opacity:1,y:0}:{}} transition={{ duration:0.5, delay:0.1*i }}
-                  className={`glass-card rounded-xl p-5 sm:p-6 border ${a.border} ${a.hover} hover:shadow-lg transition-all duration-300`}>
-                  <div className={`w-10 h-10 rounded-lg ${a.bg} flex items-center justify-center mb-4`}>
+                <motion.div
+                  key={card.title}
+                  initial={{ opacity:0, y:20 }}
+                  animate={inView?{opacity:1,y:0}:{}}
+                  transition={{ duration:0.5, delay:0.1*i }}
+                  whileHover={{ y: -4, scale: 1.01 }}
+                  className={`glass-card rounded-xl p-5 sm:p-6 border ${a.border} ${a.hover} hover:shadow-xl ${a.glow} transition-all duration-300 group cursor-default`}
+                >
+                  <motion.div
+                    className={`w-10 h-10 rounded-lg ${a.bg} flex items-center justify-center mb-4`}
+                    whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                    transition={{ duration: 0.4 }}
+                  >
                     <Icon className={`w-5 h-5 ${a.icon}`} />
-                  </div>
+                  </motion.div>
                   <h3 className="t-1 font-semibold text-base sm:text-lg mb-2">{card.title}</h3>
                   <p className="t-2 text-sm leading-relaxed">{card.description}</p>
                 </motion.div>

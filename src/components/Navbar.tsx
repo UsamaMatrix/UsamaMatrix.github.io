@@ -51,8 +51,9 @@ export default function Navbar({ theme, onThemeToggle }: Props) {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#080b0f]/90 backdrop-blur-xl border-b border-white/5" : "bg-transparent"
+        scrolled ? "navbar-bg backdrop-blur-xl border-b" : ""
       }`}
+      style={scrolled ? { background: "rgba(var(--bg-base-rgb, 8 11 15) / 0.92)", borderColor: "var(--border-card)" } : {}}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
@@ -61,7 +62,7 @@ export default function Navbar({ theme, onThemeToggle }: Props) {
             <Shield className="w-4 h-4 text-white" />
           </div>
           <div className="text-left">
-            <span className="text-white font-semibold text-sm leading-none block">Muhammad Usama</span>
+            <span className="font-semibold text-sm leading-none block" style={{ color: "var(--text-primary)" }}>Muhammad Usama</span>
             <span className="text-cyan-400 text-[10px] font-mono leading-none">Founder of UZYNTRA</span>
           </div>
         </button>
@@ -75,8 +76,9 @@ export default function Navbar({ theme, onThemeToggle }: Props) {
                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-200 ${
                   activeSection === link.href.slice(1)
                     ? "text-cyan-400 bg-cyan-400/10"
-                    : "text-slate-400 hover:text-white hover:bg-white/5"
+                    : "hover:text-cyan-400 hover:bg-cyan-400/8"
                 }`}
+                style={activeSection !== link.href.slice(1) ? { color: "var(--text-muted)" } : {}}
               >
                 {link.label}
               </button>
@@ -89,7 +91,8 @@ export default function Navbar({ theme, onThemeToggle }: Props) {
           <ThemeToggle theme={theme} onToggle={onThemeToggle} />
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
+            className="md:hidden p-2 hover:text-white transition-colors"
+            style={{ color: "var(--text-muted)" }}
             aria-label="Toggle menu"
           >
             {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -104,7 +107,8 @@ export default function Navbar({ theme, onThemeToggle }: Props) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#0d1117]/95 backdrop-blur-xl border-b border-white/5"
+            className="md:hidden backdrop-blur-xl border-b"
+            style={{ background: "var(--bg-surface-2)", borderColor: "var(--border-card)" }}
           >
             <ul className="px-4 py-3 flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -114,8 +118,9 @@ export default function Navbar({ theme, onThemeToggle }: Props) {
                     className={`w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-all ${
                       activeSection === link.href.slice(1)
                         ? "text-cyan-400 bg-cyan-400/10"
-                        : "text-slate-400 hover:text-white hover:bg-white/5"
+                        : "hover:text-cyan-400 hover:bg-cyan-400/8"
                     }`}
+                    style={activeSection !== link.href.slice(1) ? { color: "var(--text-muted)" } : {}}
                   >
                     {link.label}
                   </button>

@@ -8,8 +8,8 @@ import {
 
 /* ── EmailJS config ─────────────────────────────────────── */
 const EJS_SERVICE  = "service_kbi84ho";
-const EJS_TEMPLATE = "template_portfolio"; // create this in EmailJS dashboard
-const EJS_PUBLIC   = "YOUR_PUBLIC_KEY";    // replace with your EmailJS public key
+const EJS_TEMPLATE = "template_ak7tlim";
+const EJS_PUBLIC   = "iNAnmokH7bbLaGij5";
 
 /* ── Social cards ───────────────────────────────────────── */
 const socials = [

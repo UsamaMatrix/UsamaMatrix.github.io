@@ -118,7 +118,7 @@ export default function Contact() {
     setError("");
     setStatus("sending");
     try {
-      await emailjs.send(
+      const result = await emailjs.send(
         EJS_SERVICE,
         EJS_TEMPLATE,
         {
@@ -129,12 +129,17 @@ export default function Contact() {
         },
         EJS_PUBLIC
       );
+      console.log("EmailJS success:", result);
       setStatus("success");
       setToast("success");
       setForm({ name: "", email: "", service: "", message: "" });
-      // reset button after 4s
       setTimeout(() => setStatus("idle"), 4000);
-    } catch {
+    } catch (err: unknown) {
+      console.error("EmailJS error:", err);
+      const msg = err && typeof err === "object" && "text" in err
+        ? String((err as { text: unknown }).text)
+        : String(err);
+      setError(`Send failed: ${msg}`);
       setStatus("error");
       setToast("error");
       setTimeout(() => setStatus("idle"), 4000);

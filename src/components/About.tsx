@@ -67,17 +67,17 @@ export default function About() {
             <span className="text-cyan-400 text-sm font-mono uppercase tracking-widest">About</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+          <h2 className="t-high text-3xl sm:text-4xl font-bold mb-6">
             Building at the intersection of{" "}
             <span className="text-gradient-cyan">security</span> and{" "}
             <span className="text-gradient-red">engineering</span>
           </h2>
 
-          <p className="text-slate-400 text-lg leading-relaxed max-w-3xl mb-16">
+          <p className="t-mid text-lg leading-relaxed max-w-3xl mb-16">
             Muhammad Usama is a Rust and cybersecurity-focused engineer working across secure backend
             systems, offensive security tooling, blockchain systems, API security, automation, and
             threat-intelligence-driven products. He is the founder of{" "}
-            <span className="text-cyan-400 font-medium">UZYNTRA Security</span>, a cybersecurity and
+            <span className="text-cyan-500 font-medium">UZYNTRA Security</span>, a cybersecurity and
             secure engineering company focused on helping startups and businesses build secure digital
             systems.
           </p>
@@ -98,8 +98,8 @@ export default function About() {
                   <div className={`w-10 h-10 rounded-lg ${accent.bg} flex items-center justify-center mb-4`}>
                     <Icon className={`w-5 h-5 ${accent.icon}`} />
                   </div>
-                  <h3 className="text-white font-semibold text-lg mb-3">{card.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">{card.description}</p>
+                  <h3 className="t-high font-semibold text-lg mb-3">{card.title}</h3>
+                  <p className="t-mid text-sm leading-relaxed">{card.description}</p>
                 </motion.div>
               );
             })}

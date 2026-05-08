@@ -41,7 +41,7 @@ export default function Skills() {
             <div className="h-px w-8 bg-blue-400" />
             <span className="text-blue-400 text-sm font-mono uppercase tracking-widest">Skills</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="t-high text-3xl sm:text-4xl font-bold">
             Technical{" "}
             <span className="text-gradient-cyan">toolkit</span>
           </h2>
@@ -54,7 +54,7 @@ export default function Skills() {
               key={cat.id}
               data-active={activeTab === i}
               onClick={() => setActiveTab(i)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-200 text-slate-500 border-white/8 ${tabAccent[i]}`}
+              className={`skill-tab px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${tabAccent[i]}`}
             >
               {cat.label}
             </button>

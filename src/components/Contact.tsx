@@ -62,11 +62,11 @@ export default function Contact() {
             <span className="text-cyan-400 text-sm font-mono uppercase tracking-widest">Contact</span>
             <div className="h-px w-8 bg-cyan-400" />
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="t-high text-3xl sm:text-4xl font-bold mb-4">
             Let's build{" "}
             <span className="text-gradient-cyan">secure systems.</span>
           </h2>
-          <p className="text-slate-400 max-w-xl mx-auto leading-relaxed">
+          <p className="t-mid max-w-xl mx-auto leading-relaxed">
             Open to cybersecurity projects, Rust engineering, secure backend development, blockchain
             security work, product collaborations, and UZYNTRA-related opportunities.
           </p>
@@ -91,8 +91,8 @@ export default function Contact() {
                 <div className={`w-10 h-10 rounded-xl ${accent.bg} flex items-center justify-center mx-auto mb-3`}>
                   <Icon className={`w-5 h-5 ${accent.icon}`} />
                 </div>
-                <div className="text-white text-sm font-medium mb-1">{link.label}</div>
-                <div className="text-slate-500 text-xs font-mono truncate">{link.value}</div>
+                <div className="t-high text-sm font-medium mb-1">{link.label}</div>
+                <div className="t-low text-xs font-mono truncate">{link.value}</div>
               </motion.a>
             );
           })}
@@ -109,7 +109,7 @@ export default function Contact() {
             href="https://github.com/UsamMatrix"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 bg-white/8 hover:bg-white/12 text-white border border-white/12 hover:border-white/25 rounded-lg font-medium text-sm transition-all duration-200"
+            className="flex items-center gap-2 px-5 py-2.5 btn-card-primary rounded-lg font-medium text-sm transition-all duration-200"
           >
             <Github className="w-4 h-4" /> GitHub
           </a>

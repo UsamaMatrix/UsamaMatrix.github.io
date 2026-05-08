@@ -56,7 +56,7 @@ export default function Projects() {
             <div className="h-px w-8 bg-red-400" />
             <span className="text-red-400 text-sm font-mono uppercase tracking-widest">Featured Projects</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="t-high text-3xl sm:text-4xl font-bold">
             Things I've{" "}
             <span className="text-gradient-red">built</span>
           </h2>
@@ -80,13 +80,13 @@ export default function Projects() {
 
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-white font-semibold text-lg leading-snug pr-4">{project.title}</h3>
+                  <h3 className="t-high font-semibold text-lg leading-snug pr-4">{project.title}</h3>
                   <span className={`shrink-0 px-2.5 py-1 rounded-full text-xs font-mono ${accent.badge}`}>
                     {project.status}
                   </span>
                 </div>
 
-                <p className="text-slate-400 text-sm leading-relaxed mb-5 flex-1">{project.description}</p>
+                <p className="t-mid text-sm leading-relaxed mb-5 flex-1">{project.description}</p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 mb-5">
@@ -113,10 +113,10 @@ export default function Projects() {
                         rel={isExternal ? "noopener noreferrer" : undefined}
                         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${
                           btn.variant === "primary"
-                            ? "bg-white/10 hover:bg-white/15 text-white border border-white/15 hover:border-white/30"
+                            ? "btn-card-primary"
                             : btn.variant === "secondary"
-                            ? "bg-transparent hover:bg-white/5 text-slate-400 hover:text-white border border-white/8 hover:border-white/20"
-                            : "text-slate-500 hover:text-slate-300 transition-colors"
+                            ? "btn-card-secondary"
+                            : "t-low hover:t-mid"
                         }`}
                       >
                         <BtnIcon className="w-3.5 h-3.5" />

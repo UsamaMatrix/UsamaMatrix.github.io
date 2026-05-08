@@ -16,7 +16,7 @@ export default function UzyntraSection() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="uzyntra" className="py-24 relative bg-[#0a0d12] overflow-hidden">
+    <section id="uzyntra" className="py-24 relative alt-bg overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/4 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute inset-0 grid-bg opacity-30" />
@@ -35,18 +35,18 @@ export default function UzyntraSection() {
               <span className="text-red-400 text-sm font-mono uppercase tracking-widest">UZYNTRA Security</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            <h2 className="t-high text-3xl sm:text-4xl font-bold mb-6">
               Founder of{" "}
               <span className="text-gradient-red">UZYNTRA Security</span>
             </h2>
 
-            <p className="text-slate-400 leading-relaxed mb-6">
+            <p className="t-mid leading-relaxed mb-6">
               UZYNTRA Security is a cybersecurity and secure software engineering company focused on
               API security, penetration testing, secure backend systems, automation, blockchain
               engineering, and security-first digital products.
             </p>
 
-            <p className="text-slate-400 leading-relaxed mb-8">
+            <p className="t-mid leading-relaxed mb-8">
               As the founder of UZYNTRA Security, Muhammad Usama is building a company focused on
               practical cybersecurity, secure engineering, and developer-first products that help
               businesses reduce risk and ship safer systems.
@@ -68,7 +68,7 @@ export default function UzyntraSection() {
                   e.preventDefault();
                   document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="flex items-center gap-2 px-5 py-2.5 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 hover:border-white/20 font-semibold rounded-lg transition-all duration-200 text-sm"
+                className="flex items-center gap-2 px-5 py-2.5 btn-card-secondary font-semibold rounded-lg transition-all duration-200 text-sm"
               >
                 <Mail className="w-4 h-4" />
                 Work With Me
@@ -96,7 +96,7 @@ export default function UzyntraSection() {
                   <div className="w-8 h-8 rounded-lg bg-red-400/10 flex items-center justify-center mb-3">
                     <Icon className="w-4 h-4 text-red-400" />
                   </div>
-                  <p className="text-slate-300 text-xs font-medium leading-snug group-hover:text-white transition-colors">
+                  <p className="t-mid text-xs font-medium leading-snug group-hover:t-high transition-colors">
                     {service.label}
                   </p>
                 </motion.div>

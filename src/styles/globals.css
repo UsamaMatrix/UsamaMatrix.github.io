@@ -2,89 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── CSS custom properties ─────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════
+   DESIGN TOKENS  —  dark (default) / light
+   ═══════════════════════════════════════════════════════════ */
 :root {
-  --bg-base:      #080b0f;
-  --bg-surface:   #0a0d12;
-  --bg-surface-2: #0d1117;
+  /* backgrounds */
+  --bg-page:      #080b0f;
+  --bg-alt:       #0a0d12;
   --bg-card:      rgba(13, 17, 23, 0.85);
-  --border-card:  rgba(255, 255, 255, 0.06);
-  --text-primary: #e2e8f0;
-  --text-muted:   #94a3b8;
-  --text-faint:   #64748b;
-  --scrollbar-track: #0d1117;
-  --scrollbar-thumb: #1e293b;
+  --bg-card-solid:#0d1117;
+  --bg-nav:       rgba(8, 11, 15, 0.88);
+
+  /* borders */
+  --border:       rgba(255, 255, 255, 0.07);
+  --border-strong:rgba(255, 255, 255, 0.12);
+
+  /* text */
+  --tx-high:  #e2e8f0;   /* headings, labels */
+  --tx-mid:   #94a3b8;   /* body copy        */
+  --tx-low:   #64748b;   /* captions, hints  */
+
+  /* scrollbar */
+  --sb-track: #0d1117;
+  --sb-thumb: #1e293b;
 }
 
 html.light {
-  --bg-base:      #f1f5f9;
-  --bg-surface:   #e8edf4;
-  --bg-surface-2: #ffffff;
-  --bg-card:      rgba(255, 255, 255, 0.85);
-  --border-card:  rgba(0, 0, 0, 0.09);
-  --text-primary: #0f172a;
-  --text-muted:   #334155;
-  --text-faint:   #64748b;
-  --scrollbar-track: #e2e8f0;
-  --scrollbar-thumb: #94a3b8;
+  --bg-page:      #f1f5f9;
+  --bg-alt:       #e4eaf2;
+  --bg-card:      rgba(255, 255, 255, 0.90);
+  --bg-card-solid:#ffffff;
+  --bg-nav:       rgba(241, 245, 249, 0.92);
+
+  --border:       rgba(15, 23, 42, 0.10);
+  --border-strong:rgba(15, 23, 42, 0.18);
+
+  --tx-high:  #0f172a;
+  --tx-mid:   #334155;
+  --tx-low:   #64748b;
+
+  --sb-track: #e2e8f0;
+  --sb-thumb: #94a3b8;
 }
 
+/* ═══════════════════════════════════════════════════════════
+   BASE
+   ═══════════════════════════════════════════════════════════ */
 @layer base {
-  * { box-sizing: border-box; }
-
+  *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
 
   body {
-    background-color: var(--bg-base);
-    color: var(--text-primary);
+    background-color: var(--bg-page);
+    color: var(--tx-high);
     font-family: "Inter", system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
-  ::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-thumb);
-    border-radius: 3px;
-  }
+  ::-webkit-scrollbar-track  { background: var(--sb-track); }
+  ::-webkit-scrollbar-thumb  { background: var(--sb-thumb); border-radius: 3px; }
   ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   COMPONENTS
+   ═══════════════════════════════════════════════════════════ */
 @layer components {
-  /* ── Glass card ── */
+
+  /* ── layout helpers ── */
+  .page-bg    { background-color: var(--bg-page); }
+  .alt-bg     { background-color: var(--bg-alt);  }
+
+  /* ── glass card ── */
   .glass-card {
     background: var(--bg-card);
     backdrop-filter: blur(12px);
-    border: 1px solid var(--border-card);
+    border: 1px solid var(--border);
+    transition: background 0.25s ease, border-color 0.25s ease;
   }
 
-  /* ── Section backgrounds ── */
-  .section-base    { background-color: var(--bg-base); }
-  .section-surface { background-color: var(--bg-surface); }
-
-  /* ── Grid background ── */
+  /* ── grid dot background ── */
   .grid-bg {
     background-image:
-      linear-gradient(rgba(6, 182, 212, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
     background-size: 50px 50px;
   }
 
-  /* ── Text helpers ── */
-  .text-primary { color: var(--text-primary); }
-  .text-muted   { color: var(--text-muted); }
-  .text-faint   { color: var(--text-faint); }
+  /* ── semantic text ── */
+  .t-high { color: var(--tx-high); }
+  .t-mid  { color: var(--tx-mid);  }
+  .t-low  { color: var(--tx-low);  }
 
-  /* ── Gradient text ── */
+  /* ── gradient text ── */
   .text-gradient-cyan {
     background: linear-gradient(135deg, #06b6d4, #3b82f6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
   .text-gradient-red {
     background: linear-gradient(135deg, #ef4444, #f97316);
     -webkit-background-clip: text;
@@ -92,83 +110,76 @@ html.light {
     background-clip: text;
   }
 
-  /* ── Glow helpers ── */
-  .glow-red  { box-shadow: 0 0 20px rgba(239, 68, 68, 0.15); }
-  .glow-cyan { box-shadow: 0 0 20px rgba(6, 182, 212, 0.15); }
-  .glow-blue { box-shadow: 0 0 20px rgba(59, 130, 246, 0.15); }
-
-  .border-glow-cyan:hover {
-    border-color: rgba(6, 182, 212, 0.5);
-    box-shadow: 0 0 30px rgba(6, 182, 212, 0.1);
-  }
-  .border-glow-red:hover {
-    border-color: rgba(239, 68, 68, 0.5);
-    box-shadow: 0 0 30px rgba(239, 68, 68, 0.1);
+  /* ── navbar ── */
+  .nav-scrolled {
+    background: var(--bg-nav);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(16px);
   }
 
-  /* ── Light mode: terminal card ── */
-  html.light .terminal-card {
-    background: rgba(15, 23, 42, 0.92);
-    border-color: rgba(6, 182, 212, 0.25);
+  /* ── section divider line ── */
+  .divider-line { background-color: var(--border-strong); }
+
+  /* ── card button variants ── */
+  .btn-card-primary {
+    background: var(--border-strong);
+    color: var(--tx-high);
+    border: 1px solid var(--border-strong);
+  }
+  .btn-card-primary:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.25);
+  }
+  html.light .btn-card-primary {
+    background: rgba(15,23,42,0.08);
+    color: var(--tx-high);
+    border-color: rgba(15,23,42,0.15);
+  }
+  html.light .btn-card-primary:hover {
+    background: rgba(15,23,42,0.14);
   }
 
-  /* ── Light mode: stat cards ── */
-  html.light .stat-card {
-    background: rgba(255, 255, 255, 0.7);
-    border-color: rgba(0, 0, 0, 0.1);
+  .btn-card-secondary {
+    background: transparent;
+    color: var(--tx-mid);
+    border: 1px solid var(--border);
+  }
+  .btn-card-secondary:hover {
+    background: rgba(255,255,255,0.05);
+    color: var(--tx-high);
+    border-color: var(--border-strong);
+  }
+  html.light .btn-card-secondary:hover {
+    background: rgba(15,23,42,0.06);
   }
 
-  /* ── Light mode: navbar ── */
-  html.light .navbar-bg {
-    background: rgba(241, 245, 249, 0.92);
-    border-color: rgba(0, 0, 0, 0.08);
+  /* ── skill tab base ── */
+  .skill-tab {
+    color: var(--tx-low);
+    border: 1px solid var(--border);
+    background: transparent;
   }
 
-  /* ── Light mode: badge / chip overrides ── */
-  html.light .hero-badge-handle {
-    background: rgba(6, 182, 212, 0.12);
-    color: #0891b2;
-    border-color: rgba(6, 182, 212, 0.3);
+  /* ── terminal stays dark in both modes ── */
+  .terminal-wrap {
+    background: #0d1117;
+    border-color: rgba(6, 182, 212, 0.18);
   }
-  html.light .hero-badge-founder {
-    background: rgba(239, 68, 68, 0.1);
-    color: #dc2626;
-    border-color: rgba(239, 68, 68, 0.25);
-  }
-  html.light .skill-chip {
-    background: rgba(0, 0, 0, 0.05);
-    color: #334155;
-    border-color: rgba(0, 0, 0, 0.1);
-  }
-  html.light .skill-chip:hover {
-    border-color: rgba(6, 182, 212, 0.4);
-    color: #0891b2;
+  html.light .terminal-wrap {
+    background: #0f172a;
+    border-color: rgba(6, 182, 212, 0.28);
   }
 
-  /* ── Light mode: CTA buttons ── */
-  html.light .btn-ghost {
-    background: rgba(0, 0, 0, 0.05);
-    color: #334155;
-    border-color: rgba(0, 0, 0, 0.12);
-  }
-  html.light .btn-ghost:hover {
-    background: rgba(0, 0, 0, 0.09);
-    color: #0f172a;
-  }
-
-  /* ── Light mode: section label lines ── */
-  html.light .section-divider { background: rgba(0,0,0,0.12); }
-
-  /* ── Light mode: timeline line ── */
-  html.light .timeline-line { background: rgba(0,0,0,0.08); }
-
-  /* ── Light mode: footer ── */
-  html.light .footer-bg {
-    background: var(--bg-surface);
-    border-color: rgba(0,0,0,0.08);
+  /* ── footer ── */
+  .footer-wrap {
+    background-color: var(--bg-alt);
+    border-top: 1px solid var(--border);
   }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   UTILITIES
+   ═══════════════════════════════════════════════════════════ */
 @layer utilities {
   .animate-gradient-x {
     background-size: 300%;

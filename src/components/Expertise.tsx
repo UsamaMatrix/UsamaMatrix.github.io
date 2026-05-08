@@ -45,7 +45,7 @@ export default function Expertise() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="expertise" className="py-24 relative bg-[#0a0d12]">
+    <section id="expertise" className="py-24 relative alt-bg">
       <div className="absolute inset-0 grid-bg opacity-50" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
@@ -59,7 +59,7 @@ export default function Expertise() {
             <div className="h-px w-8 bg-cyan-400" />
             <span className="text-cyan-400 text-sm font-mono uppercase tracking-widest">Core Expertise</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="t-high text-3xl sm:text-4xl font-bold">
             What I build and{" "}
             <span className="text-gradient-cyan">how I think</span>
           </h2>
@@ -80,8 +80,8 @@ export default function Expertise() {
                 <div className={`w-9 h-9 rounded-lg ${accent.bg} flex items-center justify-center mb-4`}>
                   <Icon className={`w-4.5 h-4.5 ${accent.icon}`} />
                 </div>
-                <h3 className="text-white font-semibold text-sm mb-2 leading-snug">{card.title}</h3>
-                <p className="text-slate-500 text-xs leading-relaxed mb-4">{card.description}</p>
+                <h3 className="t-high font-semibold text-sm mb-2 leading-snug">{card.title}</h3>
+                <p className="t-mid text-xs leading-relaxed mb-4">{card.description}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {card.tags.map((tag) => (
                     <span

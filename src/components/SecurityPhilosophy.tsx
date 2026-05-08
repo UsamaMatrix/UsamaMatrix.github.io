@@ -43,12 +43,12 @@ export default function SecurityPhilosophy() {
             </div>
           </div>
 
-          <blockquote className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-4xl mx-auto mb-6">
+          <blockquote className="t-high text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight max-w-4xl mx-auto mb-6">
             "Security is not an add-on.{" "}
             <span className="text-gradient-cyan">It is architecture.</span>"
           </blockquote>
 
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="t-mid text-lg max-w-2xl mx-auto leading-relaxed">
             Secure systems are not created by adding tools at the end. They are designed from the
             first request, the first data model, the first permission check, and the first deployment
             pipeline.
@@ -67,9 +67,9 @@ export default function SecurityPhilosophy() {
             >
               <div className="flex items-center gap-2 mb-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 group-hover:shadow-[0_0_6px_rgba(6,182,212,0.8)] transition-all" />
-                <h3 className="text-white text-sm font-semibold">{p.title}</h3>
+                <h3 className="t-high text-sm font-semibold">{p.title}</h3>
               </div>
-              <p className="text-slate-500 text-xs leading-relaxed">{p.desc}</p>
+              <p className="t-mid text-xs leading-relaxed">{p.desc}</p>
             </motion.div>
           ))}
         </div>

@@ -15,7 +15,7 @@ export default function Blog() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="blog" className="py-24 relative bg-[#0a0d12]">
+    <section id="blog" className="py-24 relative alt-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -28,7 +28,7 @@ export default function Blog() {
             <div className="h-px w-8 bg-purple-400" />
             <span className="text-purple-400 text-sm font-mono uppercase tracking-widest">Writing</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="t-high text-3xl sm:text-4xl font-bold">
             Technical{" "}
             <span className="text-gradient-cyan">writing</span>
           </h2>
@@ -53,14 +53,14 @@ export default function Blog() {
                   ))}
                 </div>
 
-                <h3 className="text-white font-semibold text-base leading-snug mb-3 group-hover:text-slate-100 transition-colors">
+                <h3 className="t-high font-semibold text-base leading-snug mb-3">
                   {post.title}
                 </h3>
 
-                <p className="text-slate-500 text-sm leading-relaxed flex-1 mb-4">{post.description}</p>
+                <p className="t-mid text-sm leading-relaxed flex-1 mb-4">{post.description}</p>
 
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 text-slate-600 text-xs">
+                  <div className="flex items-center gap-1.5 t-low text-xs">
                     <Clock className="w-3.5 h-3.5" />
                     <span>{post.readTime}</span>
                   </div>

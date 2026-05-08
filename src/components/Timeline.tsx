@@ -14,7 +14,7 @@ export default function Timeline() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="timeline" className="py-24 relative bg-[#0a0d12]">
+    <section id="timeline" className="py-24 relative alt-bg">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -27,7 +27,7 @@ export default function Timeline() {
             <div className="h-px w-8 bg-purple-400" />
             <span className="text-purple-400 text-sm font-mono uppercase tracking-widest">Experience</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="t-high text-3xl sm:text-4xl font-bold">
             The work{" "}
             <span className="text-gradient-cyan">so far</span>
           </h2>
@@ -35,7 +35,7 @@ export default function Timeline() {
 
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-white/6" />
+          <div className="absolute left-4 top-0 bottom-0 w-px" style={{ background: "var(--border-strong)" }} />
 
           <div className="space-y-8">
             {timelineItems.map((item, i) => {
@@ -49,19 +49,20 @@ export default function Timeline() {
                   className="relative pl-12"
                 >
                   {/* Dot */}
-                  <div className={`absolute left-2.5 top-1.5 w-3 h-3 rounded-full ${accent.dot} ring-4 ring-[#0a0d12] -translate-x-1/2`} />
+                  <div className={`absolute left-2.5 top-1.5 w-3 h-3 rounded-full ${accent.dot} -translate-x-1/2`}
+                       style={{ boxShadow: "0 0 0 4px var(--bg-alt)" }} />
 
                   <div className={`glass-card rounded-xl p-5 border border-white/6 hover:border-white/12 transition-all duration-300`}>
                     <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                       <div>
-                        <h3 className="text-white font-semibold">{item.role}</h3>
-                        <span className="text-slate-500 text-sm">{item.company}</span>
+                        <h3 className="t-high font-semibold">{item.role}</h3>
+                        <span className="t-low text-sm">{item.company}</span>
                       </div>
-                      <span className="text-xs font-mono text-slate-500 bg-white/4 px-2.5 py-1 rounded-md border border-white/6">
+                      <span className="t-low text-xs font-mono px-2.5 py-1 rounded-md border glass-card">
                         {item.period}
                       </span>
                     </div>
-                    <p className="text-slate-400 text-sm leading-relaxed mb-3">{item.description}</p>
+                    <p className="t-mid text-sm leading-relaxed mb-3">{item.description}</p>
                     <div className="flex flex-wrap gap-1.5">
                       {item.tags.map((tag) => (
                         <span key={tag} className={`px-2 py-0.5 text-[10px] font-mono rounded border ${accent.tag}`}>

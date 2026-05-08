@@ -24,8 +24,8 @@ html.light {
   --bg-alt:    #eef2f7;
   --bg-card:   #ffffff;
   --bg-nav:    rgba(248,250,252,0.93);
-  --border:    rgba(15,23,42,0.10);
-  --border-hi: rgba(15,23,42,0.18);
+  --border:    rgba(15,23,42,0.12);
+  --border-hi: rgba(15,23,42,0.22);
   --tx-1: #0f172a;
   --tx-2: #334155;
   --tx-3: #64748b;
@@ -167,6 +167,35 @@ html.light {
 
   /* section divider line */
   .divider { background-color: var(--border-hi); }
+
+  /* light mode — accent borders need higher opacity to show on white cards */
+  html.light .border-cyan-400\/20   { border-color: rgba(6,182,212,0.35);   }
+  html.light .border-red-400\/20    { border-color: rgba(239,68,68,0.30);   }
+  html.light .border-blue-400\/20   { border-color: rgba(59,130,246,0.30);  }
+  html.light .border-purple-400\/20 { border-color: rgba(139,92,246,0.30);  }
+  html.light .border-red-400\/15    { border-color: rgba(239,68,68,0.28);   }
+  html.light .border-cyan-400\/10   { border-color: rgba(6,182,212,0.25);   }
+  html.light .hover\:border-cyan-400\/40:hover   { border-color: rgba(6,182,212,0.55);  }
+  html.light .hover\:border-red-400\/40:hover    { border-color: rgba(239,68,68,0.50);  }
+  html.light .hover\:border-blue-400\/40:hover   { border-color: rgba(59,130,246,0.50); }
+  html.light .hover\:border-purple-400\/40:hover { border-color: rgba(139,92,246,0.50); }
+  html.light .hover\:border-cyan-400\/50:hover   { border-color: rgba(6,182,212,0.60);  }
+  html.light .hover\:border-red-400\/50:hover    { border-color: rgba(239,68,68,0.55);  }
+  html.light .hover\:border-blue-400\/50:hover   { border-color: rgba(59,130,246,0.55); }
+  html.light .hover\:border-purple-400\/50:hover { border-color: rgba(139,92,246,0.55); }
+
+  /* light mode — form inputs */
+  html.light .form-input {
+    background: #f8fafc;
+    border-color: rgba(15,23,42,0.18);
+    color: #0f172a;
+  }
+  html.light .form-input:focus {
+    border-color: rgba(6,182,212,0.6);
+    background: #ffffff;
+  }
+  html.light .form-input::placeholder { color: #94a3b8; }
+  html.light select.form-input option { background: #ffffff; color: #0f172a; }
 }
 
 /* ═══════════════════════════════════════════════════

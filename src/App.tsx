@@ -11,6 +11,7 @@ import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
+import CursorTrail from "./components/CursorTrail";
 import { useTheme } from "./components/ThemeToggle";
 
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
       </main>
       <Footer />
       <BackToTop />
+      <CursorTrail />
     </>
   );
 }

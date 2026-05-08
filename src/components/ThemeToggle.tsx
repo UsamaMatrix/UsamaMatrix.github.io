@@ -34,7 +34,8 @@ export default function ThemeToggle({ theme, onToggle }: Props) {
     <motion.button
       onClick={onToggle}
       whileTap={{ scale: 0.9 }}
-      className="relative w-9 h-9 rounded-lg flex items-center justify-center border border-white/10 hover:border-cyan-400/40 bg-white/4 hover:bg-cyan-400/10 text-slate-400 hover:text-cyan-400 transition-all duration-200"
+      className="relative w-9 h-9 rounded-lg flex items-center justify-center border hover:border-cyan-400/40 bg-white/4 hover:bg-cyan-400/10 text-slate-400 hover:text-cyan-400 transition-all duration-200"
+      style={{ borderColor: "var(--border)" }}
       aria-label="Toggle theme"
       title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
     >

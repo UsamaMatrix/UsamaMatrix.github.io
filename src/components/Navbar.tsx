@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Shield } from "lucide-react";
+import ThemeToggle, { type Theme } from "./ThemeToggle";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -12,7 +13,12 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-export default function Navbar() {
+interface Props {
+  theme: Theme;
+  onThemeToggle: () => void;
+}
+
+export default function Navbar({ theme, onThemeToggle }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -78,14 +84,17 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        {/* Right controls */}
+        <div className="flex items-center gap-2">
+          <ThemeToggle theme={theme} onToggle={onThemeToggle} />
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden p-2 text-slate-400 hover:text-white transition-colors"
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}

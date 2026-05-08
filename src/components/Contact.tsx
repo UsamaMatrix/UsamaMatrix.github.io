@@ -20,8 +20,8 @@ const contactLinks = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@example.com",
-    href: "mailto:contact@example.com",
+    value: "contact@UZYNTRA.com",
+    href: "mailto:contact@UZYNTRA.com",
     accent: "red",
   },
   {
@@ -122,7 +122,7 @@ export default function Contact() {
             <Linkedin className="w-4 h-4" /> LinkedIn
           </a>
           <a
-            href="mailto:contact@example.com"
+            href="mailto:contact@UZYNTRA.com"
             className="flex items-center gap-2 px-5 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-lg text-sm transition-all duration-200"
           >
             <Mail className="w-4 h-4" /> Email Me

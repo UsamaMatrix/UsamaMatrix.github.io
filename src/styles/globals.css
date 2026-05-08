@@ -17,7 +17,44 @@
     font-family: "Inter", system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
+
+  /* Light mode overrides */
+  html.light body {
+    background-color: #f0f4f8;
+    color: #0f172a;
+  }
+
+  html.light .glass-card {
+    background: rgba(255, 255, 255, 0.75);
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+
+  html.light .grid-bg {
+    background-image: linear-gradient(
+        rgba(6, 182, 212, 0.06) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.06) 1px, transparent 1px);
+  }
+
+  html.light .text-slate-400 { color: #475569; }
+  html.light .text-slate-500 { color: #64748b; }
+  html.light .text-slate-600 { color: #475569; }
+  html.light .text-slate-700 { color: #334155; }
+  html.light .text-white { color: #0f172a; }
+  html.light .bg-\[\#080b0f\] { background-color: #f0f4f8; }
+  html.light .bg-\[\#0a0d12\] { background-color: #e8edf3; }
+  html.light .bg-\[\#0d1117\] { background-color: #f8fafc; }
+  html.light .border-white\/5 { border-color: rgba(0,0,0,0.06); }
+  html.light .border-white\/6 { border-color: rgba(0,0,0,0.07); }
+  html.light .border-white\/8 { border-color: rgba(0,0,0,0.09); }
+  html.light .bg-white\/3 { background-color: rgba(0,0,0,0.03); }
+  html.light .bg-white\/4 { background-color: rgba(0,0,0,0.04); }
+  html.light .bg-white\/5 { background-color: rgba(0,0,0,0.05); }
+  html.light .bg-white\/8 { background-color: rgba(0,0,0,0.06); }
+  html.light .bg-white\/10 { background-color: rgba(0,0,0,0.07); }
 
   ::-webkit-scrollbar {
     width: 6px;

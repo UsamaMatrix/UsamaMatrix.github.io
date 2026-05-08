@@ -11,11 +11,14 @@ import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
+import { useTheme } from "./components/ThemeToggle";
 
 export default function App() {
+  const { theme, toggle } = useTheme();
+
   return (
     <>
-      <Navbar />
+      <Navbar theme={theme} onThemeToggle={toggle} />
       <main>
         <Hero />
         <About />

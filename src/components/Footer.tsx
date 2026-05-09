@@ -3,8 +3,8 @@ import { useRef } from "react";
 import { Github, Linkedin, ExternalLink, Shield } from "lucide-react";
 
 const links = [
-  { icon: Github,       label: "/UsamMatrix",      href: "https://github.com/UsamMatrix",          color: "hover:text-cyan-400" },
-  { icon: Linkedin,     label: "/UsamMatrix",      href: "https://www.linkedin.com/in/UsamMatrix", color: "hover:text-cyan-400" },
+  { icon: Github,       label: "/UsamaMatrix",      href: "https://github.com/UsamaMatrix",          color: "hover:text-cyan-400" },
+  { icon: Linkedin,     label: "/UsamaMatrix",      href: "https://www.linkedin.com/in/UsamaMatrix", color: "hover:text-cyan-400" },
   { icon: ExternalLink, label: "UZYNTRA Security", href: "https://uzyntra.com",                    color: "hover:text-red-400"  },
 ];
 

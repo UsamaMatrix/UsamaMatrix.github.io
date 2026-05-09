@@ -11,8 +11,8 @@ const EJS_TEMPLATE = "template_ak7tlim";
 const EJS_PUBLIC   = "iNAnmokH7bbLaGij5";
 
 const socials = [
-  { icon: Github,    label: "GitHub",          value: "github.com/UsamMatrix",      href: "https://github.com/UsamMatrix",          accent: "cyan"   },
-  { icon: Linkedin,  label: "LinkedIn",         value: "linkedin.com/in/UsamMatrix", href: "https://www.linkedin.com/in/UsamMatrix", accent: "blue"   },
+  { icon: Github,    label: "GitHub",          value: "github.com/UsamaMatrix",      href: "https://github.com/UsamaMatrix",          accent: "cyan"   },
+  { icon: Linkedin,  label: "LinkedIn",         value: "linkedin.com/in/UsamaMatrix", href: "https://www.linkedin.com/in/UsamaMatrix", accent: "blue"   },
   { icon: Mail,      label: "Email",            value: "contact@UZYNTRA.com",        href: "mailto:contact@UZYNTRA.com",             accent: "red"    },
   { icon: Building2, label: "UZYNTRA Security", value: "uzyntra.com",                href: "https://uzyntra.com",                    accent: "purple" },
 ];

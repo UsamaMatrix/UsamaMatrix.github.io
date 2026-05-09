@@ -137,7 +137,7 @@ export default function Hero() {
                 transition={{ delay: 0.2 }}
               >
                 <span className="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/25 hover:bg-cyan-500/15 transition-colors cursor-default">
-                  @UsamMatrix
+                  @UsamaMatrix
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-mono bg-red-500/10 text-red-400 border border-red-500/25 hover:bg-red-500/15 transition-colors cursor-default">
                   Founder · UZYNTRA Security
@@ -158,15 +158,15 @@ export default function Hero() {
 
               {/* social */}
               <div className="flex flex-wrap items-center gap-4 mb-6">
-                <a href="https://github.com/UsamMatrix" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/UsamaMatrix" target="_blank" rel="noopener noreferrer"
                    className="flex items-center gap-2 t-2 hover:text-cyan-400 transition-colors text-sm group">
                   <Github className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="font-mono">github.com/UsamMatrix</span>
+                  <span className="font-mono">github.com/UsamaMatrix</span>
                 </a>
-                <a href="https://www.linkedin.com/in/UsamMatrix" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.linkedin.com/in/UsamaMatrix" target="_blank" rel="noopener noreferrer"
                    className="flex items-center gap-2 t-2 hover:text-cyan-400 transition-colors text-sm group">
                   <Linkedin className="w-4 h-4 shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="font-mono">/UsamMatrix</span>
+                  <span className="font-mono">/UsamaMatrix</span>
                 </a>
               </div>
 
